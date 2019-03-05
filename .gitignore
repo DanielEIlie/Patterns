@@ -48,3 +48,5 @@ vc140.pdb
 # Other
 **/.vs/
 
+*.pdb
+*.manifest
