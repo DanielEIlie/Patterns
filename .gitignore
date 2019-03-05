@@ -1,0 +1,50 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Visual Studio
+*.u2d
+*.suo
+vc100.pdb
+bin/*
+obj/*
+srv/*
+*.vfproj.*.user
+My Amplifier XE Results*
+My Inspector XE Results*
+My Advisor XE Results*
+BuildLog.htm
+vc140.pdb
+
+# Profiler
+
+
+# Other
+**/.vs/
+
