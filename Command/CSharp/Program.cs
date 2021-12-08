@@ -1,12 +1,11 @@
-﻿using System;
-
-namespace CSharp
+﻿namespace CSharp
 {
   class Program
   {
     static void Main( string[] args )
     {
-      //Testing.TestingEditor();
+      Testing.TestingEditor();
+      Testing.TestingApplication();
     }
   }
 }

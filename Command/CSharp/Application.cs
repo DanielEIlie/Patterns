@@ -6,7 +6,7 @@ namespace CSharp
   {
     readonly List<Editor> _editors = new();
     readonly CommandHistory _history = new();
-    Editor ActiveEditor { get; set; }
+    internal Editor ActiveEditor { get; set; }
     internal string Clipboard { get; set; }
 
     /// <summary>
@@ -14,7 +14,8 @@ namespace CSharp
     /// </summary>
     public void CreateUI()
     {
-
+      _editors.Add( new Editor() );
+      ActiveEditor = _editors[_editors.Count - 1];
     }
 
     /// <summary>
