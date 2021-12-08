@@ -4,20 +4,20 @@
   {
     bool _isConfigured;
     int _startIndex;
-    int _endIndex;
+    int _length;
 
     public CopyCommand( Application app, Editor editor ) : base( app, editor ) { }
 
     /// <summary>
-    /// Provide the start and end indices to perform the operation.
+    /// Provide the start index and the length of the selection to perform the operation.
     /// </summary>
     /// <param name="startIndex"></param>
-    /// <param name="endIndex"></param>
+    /// <param name="length"></param>
     /// <returns>True if configured, false otherwise.</returns>
-    public bool Configure( int startIndex, int endIndex )
+    public bool Configure( int startIndex, int length )
     {
       _startIndex = startIndex;
-      _endIndex = endIndex;
+      _length = length;
       _isConfigured = true;
       return _isConfigured;
     }
@@ -26,7 +26,7 @@
     {
       if ( _isConfigured )
       {
-        _app.Clipboard = _editor.GetSelection( _startIndex, _endIndex );
+        _app.Clipboard = _editor.GetSelection( _startIndex, _length );
         _isConfigured = false;
       }
       return false;
