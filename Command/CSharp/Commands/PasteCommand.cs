@@ -14,6 +14,11 @@ namespace CSharp.Commands
 
     public PasteCommand( Application app, Editor editor ) : base( app, editor ) { }
 
+    /// <summary>
+    /// Provide the string index to make an insertion.
+    /// </summary>
+    /// <param name="startIndex"></param>
+    /// <returns>True if configured, false otherwise.</returns>
     public bool Configure( int startIndex )
     {
       _startIndex = startIndex;
@@ -21,6 +26,11 @@ namespace CSharp.Commands
       return _isConfigured;
     }
 
+    /// <summary>
+    /// Provide the text to be replaced.
+    /// </summary>
+    /// <param name="existingText"></param>
+    /// <returns>True if configured, false otherwise.</returns>
     public bool Configure( string existingText )
     {
       _existingText = existingText;

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CSharp.Commands
+﻿namespace CSharp.Commands
 {
   class CopyCommand : Command
   {
@@ -14,6 +8,12 @@ namespace CSharp.Commands
 
     public CopyCommand( Application app, Editor editor ) : base( app, editor ) { }
 
+    /// <summary>
+    /// Provide the start and end indices to perform the operation.
+    /// </summary>
+    /// <param name="startIndex"></param>
+    /// <param name="endIndex"></param>
+    /// <returns>True if configured, false otherwise.</returns>
     public bool Configure( int startIndex, int endIndex )
     {
       _startIndex = startIndex;
