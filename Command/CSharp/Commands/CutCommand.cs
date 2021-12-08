@@ -30,7 +30,7 @@
       }
       SaveBackup();
       _app.Clipboard = _editor.GetSelection( _startIndex, _endIndex );
-      _editor.DeleteSelection( _startIndex, _endIndex - _startIndex + 1 );
+      _editor.Text = _editor.DeleteSelection( _startIndex, _endIndex - _startIndex + 1 );
       _isConfigured = false;
       return true;
     }

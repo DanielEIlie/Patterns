@@ -47,11 +47,11 @@ namespace CSharp.Commands
       SaveBackup();
       if ( string.IsNullOrEmpty( _existingText ) )
       {
-        _editor.InsertSelection( _startIndex, _app.Clipboard );
+        _editor.Text = _editor.InsertSelection( _startIndex, _app.Clipboard );
       }
       else
       {
-        _editor.ReplaceSelection( _existingText, _app.Clipboard );
+        _editor.Text = _editor.ReplaceSelection( _existingText, _app.Clipboard );
       }
       _isConfigured = false;
       return true;
