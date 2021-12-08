@@ -1,22 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace CSharp
 {
   class Application
   {
-    public readonly List<Editor> editors = new();
-    public Editor activeEditor { get; set; }
-    public string clipboard { get; set; }
-    //command history
+    readonly List<Editor> _editors = new();
+    readonly CommandHistory _history = new();
+    Editor activeEditor { get; set; }
+    string clipboard { get; set; }
 
-    public bool ExecuteCommand()
+    /// <summary>
+    /// Creates the user interface.
+    /// </summary>
+    /// <returns>True if successful, false otherwise.</returns>
+    public bool CreateUI()
     {
       return true;
     }
-    //undo
+
+    /// <summary>
+    /// Executes a specified command.
+    /// </summary>
+    /// <param name="command"></param>
+    /// <returns>True if successful, false otherwise.</returns>
+    public bool ExecuteCommand(Command command)
+    {
+      return true;
+    }
+
+    /// <summary>
+    /// Undoes the last command, reverting the editor's state.
+    /// </summary>
+    /// <returns>True if successful, false otherwise.</returns>
+    public bool Undo()
+    {
+      Command command = _history.Pop();
+      if( command == null )
+      {
+        return false;
+      }
+      command.Undo();
+      return true;
+    }
   }
 }
