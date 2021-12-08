@@ -6,41 +6,39 @@ namespace CSharp
   {
     readonly List<Editor> _editors = new();
     readonly CommandHistory _history = new();
-    Editor activeEditor { get; set; }
-    string clipboard { get; set; }
+    Editor ActiveEditor { get; set; }
+    internal string Clipboard { get; set; }
 
     /// <summary>
     /// Creates the user interface.
     /// </summary>
-    /// <returns>True if successful, false otherwise.</returns>
-    public bool CreateUI()
+    public void CreateUI()
     {
-      return true;
+
     }
 
     /// <summary>
     /// Executes a specified command.
     /// </summary>
     /// <param name="command"></param>
-    /// <returns>True if successful, false otherwise.</returns>
-    public bool ExecuteCommand(Command command)
+    public void ExecuteCommand( Command command )
     {
-      return true;
+      if ( command.Execute() )
+      {
+        _history.Push( command );
+      }
     }
 
     /// <summary>
     /// Undoes the last command, reverting the editor's state.
     /// </summary>
-    /// <returns>True if successful, false otherwise.</returns>
-    public bool Undo()
+    public void Undo()
     {
       Command command = _history.Pop();
-      if( command == null )
+      if ( command != null )
       {
-        return false;
+        command.Undo();
       }
-      command.Undo();
-      return true;
     }
   }
 }

@@ -2,8 +2,8 @@
 {
   abstract class Command
   {
-    private Application _app;
-    private Editor _editor;
+    private protected Application _app;
+    private protected Editor _editor;
     private string _backup;
 
     public Command(Application app, Editor editor)
@@ -31,7 +31,8 @@
     /// <summary>
     /// Executes the command.
     /// </summary>
-    /// <returns>True if the editor's state was changed, false otherwise.</returns>
+    /// <returns>True if the editor's state was changed and
+    /// command should be logged, false otherwise.</returns>
     public abstract bool Execute();
   }
 }
