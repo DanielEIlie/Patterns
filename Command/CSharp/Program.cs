@@ -6,7 +6,12 @@ namespace CSharp
   {
     static void Main( string[] args )
     {
-      Testing.TestingEditor();
+      //Testing.TestingEditor();
+
+      Editor editor1 = new();
+      Application application = new();
+      application.editors.Add( editor1 );
+
     }
   }
 }

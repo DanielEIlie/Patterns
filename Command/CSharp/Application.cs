@@ -8,5 +8,15 @@ namespace CSharp
 {
   class Application
   {
+    public readonly List<Editor> editors = new();
+    public Editor activeEditor { get; set; }
+    public string clipboard { get; set; }
+    //command history
+
+    public bool ExecuteCommand()
+    {
+      return true;
+    }
+    //undo
   }
 }
