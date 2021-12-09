@@ -12,13 +12,13 @@
     /// <returns>String if successful or null otherwise.</returns>
     public string GetSelection( int startIndex, int length )
     {
-      if ( !string.IsNullOrEmpty( Text ) &&
-        length > 0 &&
-        startIndex + length - 1 < Text.Length )
+      if ( string.IsNullOrEmpty( Text ) ||
+        length <= 0 ||
+        startIndex + length - 1 >= Text.Length )
       {
-        return Text.Substring( startIndex, length );
+        return null;
       }
-      return null;
+      return Text.Substring( startIndex, length );
     }
 
     /// <summary>
