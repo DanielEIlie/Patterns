@@ -4,11 +4,11 @@ namespace CSharp
 {
   class SquarePegAdapter : RoundPeg
   {
-    SquarePeg _squarePeg;
+    //SquarePeg _squarePeg;
 
-    public SquarePegAdapter( SquarePeg squarePeg ) : base( squarePeg.Radius )
+    public SquarePegAdapter( SquarePeg squarePeg ) : base( squarePeg.Width / Math.Sqrt( 2.0 ) )
     {
-      _squarePeg = squarePeg;
+      //_squarePeg = squarePeg;
     }
 
   }
