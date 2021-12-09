@@ -1,26 +1,32 @@
 #include "Editor.h"
 
-string Editor::GetSelection(int startIndex, int length)
+std::string Editor::GetSelection(int startIndex, int length)
 {
-  return string();
+  if (strText.empty() ||
+    length <= 0 ||
+    startIndex + length - 1 >= strText.length())
+  {
+    return nullptr;
+  }
+  return strText.substr(startIndex, length);
 }
 
-string Editor::DeleteSelection(int startIndex, int length)
+std::string Editor::DeleteSelection(int startIndex, int length)
 {
-	return string();
+	return strText.erase(startIndex, length);
 }
 
-string Editor::DeleteSelection(string text)
+std::string Editor::DeleteSelection(std::string text)
 {
-  return string();
+  return nullptr // strText.replace();
 }
 
-string Editor::ReplaceSelection(string existingText, string newText)
+std::string Editor::ReplaceSelection(std::string existingText, std::string newText)
 {
-  return string();
+  return nullptr // strText.replace();
 }
 
-string Editor::InsertSelection(int startIndex, string text)
+std::string Editor::InsertSelection(int startIndex, std::string text)
 {
-  return string();
+  return nullptr // string();
 }

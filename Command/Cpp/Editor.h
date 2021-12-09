@@ -1,14 +1,13 @@
 #pragma once
 #include <string>
-using namespace std;
 class Editor
 {
 public:
-  string strText;
-  string GetSelection(int startIndex, int length);
-  string DeleteSelection(int startIndex, int length);
-  string DeleteSelection(string text);
-  string ReplaceSelection(string existingText, string newText);
-  string InsertSelection(int startIndex, string text);
+  std::string strText;
+  std::string GetSelection(int startIndex, int length);
+  std::string DeleteSelection(int startIndex, int length);
+  std::string DeleteSelection(std::string text);
+  std::string ReplaceSelection(std::string existingText, std::string newText);
+  std::string InsertSelection(int startIndex, std::string text);
 };
 
