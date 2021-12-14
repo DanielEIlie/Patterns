@@ -14,8 +14,8 @@ namespace CSharp
     /// </summary>
     public void CreateUI()
     {
-      _editors.Add( new Editor() );
-      ActiveEditor = _editors[_editors.Count - 1];
+      ActiveEditor = new Editor();
+      _editors.Add( ActiveEditor );
     }
 
     /// <summary>
