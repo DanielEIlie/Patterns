@@ -4,7 +4,7 @@ std::string Editor::GetSelection(int startIndex, int length)
 {
   if (strText.empty() ||
     length <= 0 ||
-    startIndex + length - 1 >= strText.length())
+    startIndex + length - 1 >= (int)strText.length())
   {
     return nullptr;
   }
@@ -13,20 +13,38 @@ std::string Editor::GetSelection(int startIndex, int length)
 
 std::string Editor::DeleteSelection(int startIndex, int length)
 {
-	return strText.erase(startIndex, length);
+  return strText.erase(startIndex, length);
 }
 
 std::string Editor::DeleteSelection(std::string text)
 {
-  return nullptr // strText.replace();
+  std::string str = strText;
+  std::size_t findPos = str.find(text);
+
+  while (findPos != std::string::npos)
+  {
+    str = DeleteSelection(findPos, text.length());
+    findPos = str.find(text);
+  }
+
+  return str;
 }
 
 std::string Editor::ReplaceSelection(std::string existingText, std::string newText)
 {
-  return nullptr // strText.replace();
+  std::string str = strText;
+  std::size_t findPos = str.find(existingText);
+
+  while (findPos != std::string::npos)
+  {
+    str = DeleteSelection(findPos, existingText.length());
+    findPos = str.find(existingText);
+  }
+
+  return str;
 }
 
 std::string Editor::InsertSelection(int startIndex, std::string text)
 {
-  return nullptr // string();
+  return strText.insert(startIndex, text);
 }
