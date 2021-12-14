@@ -9,6 +9,7 @@ private:
   std::string strBackup;
 
 public:
+  Command() = delete;
   Command(Editor inEditor);
   void SaveBackup();
   void Undo();
